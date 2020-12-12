@@ -27,6 +27,12 @@ app.use(cors());
 
 app.use(express.json());
 
+const exercisesRouter = require('./routes/exercises');
+const usersRouter = require('./routes/users');
+
+app.use('/exercises', exercisesRouter);
+app.use('/users', usersRouter);
+
 app.listen(port, ()=> {
     console.log(`Started: http://localhost:${port}`);
 
